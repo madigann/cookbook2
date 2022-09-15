@@ -18,7 +18,7 @@
     </div>
     <div class='table-responsive'>
       <table class='table'
-             *ngIf='products.length'>
+             *ngIf='recipes.length'>
         <thead>
           <tr>
             <th>
@@ -27,32 +27,30 @@
                 {{showImage ? 'Hide' : 'Show'}} Image
               </button>
             </th>
-            <th>Product</th>
-            <th>Code</th>
-            <th>Available</th>
-            <th>Price</th>
-            <th>5 Star Rating</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Done</th>
+            <th>Rating</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor='let product of filteredProducts'>
+          <tr *ngFor='let recipe of filteredrecipes'>
             <td>
               <img *ngIf='showImage'
-                   [src]='product.imageUrl'
-                   [title]='product.productName'
+                   [src]='recipe.imageUrl'
+                   [title]='recipe.name'
                    [style.width.px]='imageWidth'
                    [style.margin.px]='imageMargin'>
             </td>
             <td>
-              <a [routerLink]="['/products', product.productId]">
-                {{ product.productName }}
+              <a [routerLink]="['/recipes', recipe.recipeId]">
+                {{ recipe.name }}
               </a>
             </td>
-            <td>{{ product.productCode | lowercase | convertToSpaces:'-' }}</td>
-            <td>{{ product.releaseDate }}</td>
-            <td>{{ product.price | currency:'USD':'symbol':'1.2-2' }}</td>
+            <td>{{ recipe.description }}</td>
+            <td>{{ recipe.done }}</td>
             <td>
-              <pm-star [rating]='product.starRating'
+              <pm-star [rating]='recipe.rating'
                        (ratingClicked)='onRatingClicked($event)'>
               </pm-star>
             </td>

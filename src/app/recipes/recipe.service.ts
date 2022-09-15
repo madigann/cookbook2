@@ -2,34 +2,34 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, catchError, tap, throwError, map } from "rxjs";
 
-import { IProduct } from "./product";
+import { IRecipe } from "./recipe";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class recipeservice {
   // If using Stackblitz, replace the url with this line
   // because Stackblitz can't find the api folder.
-  // private productUrl = 'assets/products/products.json';
-  private productUrl = 'api/products/products.json';
+  // private recipeUrl = 'assets/recipes/recipes.json';
+  private recipeUrl = 'assets/data/recipes.json';
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this.productUrl)
+  getrecipes(): Observable<IRecipe[]> {
+    return this.http.get<IRecipe[]>(this.recipeUrl)
       .pipe(
         tap(data => console.log('All: ', JSON.stringify(data))),
         catchError(this.handleError)
       );
   }
 
-  // Get one product
-  // Since we are working with a json file, we can only retrieve all products
-  // So retrieve all products and then find the one we want using 'map'
-  getProduct(id: number): Observable<IProduct | undefined> {
-    return this.getProducts()
+  // Get one recipe
+  // Since we are working with a json file, we can only retrieve all recipes
+  // So retrieve all recipes and then find the one we want using 'map'
+  getrecipe(id: number): Observable<IRecipe | undefined> {
+    return this.getrecipes()
       .pipe(
-        map((products: IProduct[]) => products.find(p => p.productId === id))
+        map((recipes: IRecipe[]) => recipes.find(p => p.recipeId === id))
       );
   }
 

@@ -29,7 +29,7 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "recipeion": {
               "budgets": [
                 {
                   "type": "initial",
@@ -59,13 +59,13 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "recipeion"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "browserTarget": "apm:build:production"
+            "recipeion": {
+              "browserTarget": "apm:build:recipeion"
             },
             "development": {
               "browserTarget": "apm:build:development"

@@ -1,0 +1,42 @@
+[
+  {
+    "recipeId": 1,
+    "name": "Cake",
+    "description": "Delicious vanilla cake with chocolate frosting",
+    "rating": 5,
+    "done": true,
+    "imageUrl": "assets/images/Cake.png"
+  },
+  {
+    "recipeId": 2,
+    "name": "Hot Chocolate",
+    "description": "The best you will taste",
+    "rating": 2,
+    "done": false,
+    "imageUrl": "assets/images/Hot Chocolate.png"
+  },
+  {
+    "recipeId": 3,
+    "name": "Hamburger",
+    "description": "Juicy and tasty",
+    "rating": 3,
+    "done": false,
+    "imageUrl": "assets/images/Hamburger.png"
+  },
+  {
+    "recipeId": 4,
+    "name": "Pizza",
+    "description": "It will feel like you're in Italy",
+    "rating": 2,
+    "done": true,
+    "imageUrl": "assets/images/Pizza.png"
+  },
+  {
+    "recipeId": 5,
+    "name": "Ice Cream",
+    "description": "Vanilla with rainbow sprinkles",
+    "rating": 5,
+    "done": true,
+    "imageUrl": "assets/images/Ice Cream.png"
+  }
+]

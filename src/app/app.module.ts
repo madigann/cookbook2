@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { RouterModule } from '@angular/router';
-import { ProductModule } from './products/product.module';
+import { recipeModule } from './recipes/recipe.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { ProductModule } from './products/product.module';
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
-    ProductModule
+    recipeModule
   ],
   bootstrap: [AppComponent]
 })
