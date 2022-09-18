@@ -48,7 +48,9 @@
               </a>
             </td>
             <td>{{ recipe.description }}</td>
-            <td>{{ recipe.done }}</td>
+            <td>
+              <i class="fa {{recipe.done ? 'fa-check' : 'fa-xmark'}}"></i>
+            </td>
             <td>
               <pm-star [rating]='recipe.rating'
                        (ratingClicked)='onRatingClicked($event)'>

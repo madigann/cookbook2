@@ -16,11 +16,11 @@
           <div class='col-md-8'>{{recipe.description}}</div>
         </div>
         <div class='row'>
-          <div class='col-md-4'>Price:</div>
-          <div class='col-md-8'>{{recipe.done}}</div>
+          <div class='col-md-4'>Attempted:</div>
+          <div class="col-md-8 fa {{recipe.done ? 'fa-check' : 'fa-xmark'}}"></div>
         </div>
         <div class='row'>
-          <div class='col-md-4'>5 Star Rating:</div>
+          <div class='col-md-4'>Rating:</div>
           <div class='col-md-8'>
             <pm-star [rating]='recipe.rating'>
             </pm-star>

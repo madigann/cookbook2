@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 export class CarouselBasic {
 
   // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/100/100`);
   images = ["assets/images/Cake.png",
             "assets/images/HotChocolate.png",
             "assets/images/Hamburger.png",
