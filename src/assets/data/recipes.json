@@ -13,7 +13,7 @@
     "description": "The best you will taste",
     "rating": 2,
     "done": false,
-    "imageUrl": "assets/images/Hot Chocolate.png"
+    "imageUrl": "assets/images/HotChocolate.png"
   },
   {
     "recipeId": 3,
@@ -37,6 +37,6 @@
     "description": "Vanilla with rainbow sprinkles",
     "rating": 5,
     "done": true,
-    "imageUrl": "assets/images/Ice Cream.png"
+    "imageUrl": "assets/images/IceCream.png"
   }
 ]
