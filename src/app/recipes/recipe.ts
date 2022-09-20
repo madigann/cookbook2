@@ -1,8 +1,8 @@
 export interface IRecipe {
   recipeId: number;
   name: string;
-  description: string;
+  description: string | null;
   rating: number;
-  done: boolean;
-  imageUrl: string;
+  done: boolean | null;
+  imageUrl: string | null;
 }

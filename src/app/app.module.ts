@@ -7,6 +7,7 @@ import { welcomeModule } from './home/welcome.module';
 import { RouterModule } from '@angular/router';
 import { recipeModule } from './recipes/recipe.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 import { WelcomeComponent } from './home/welcome.component';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { WelcomeComponent } from './home/welcome.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     NgbModule,
     HttpClientModule,
     RouterModule.forRoot([

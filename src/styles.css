@@ -15,9 +15,13 @@ div.card {
 }
 
 a {
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+a.navbar-brand {
+  text-decoration: none;
 }

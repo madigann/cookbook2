@@ -4,11 +4,13 @@ import { recipeDetailComponent } from './recipe-detail.component';
 import { RouterModule } from '@angular/router';
 import { recipeDetailGuard } from './recipe-detail.guard';
 import { SharedModule } from '../shared/shared.module';
+import { EditRecieComponent } from './forms/edit/edit.component';
 
 @NgModule({
   declarations: [
     recipeListComponent,
-    recipeDetailComponent
+    recipeDetailComponent,
+    EditRecieComponent
   ],
   imports: [
     RouterModule.forChild([

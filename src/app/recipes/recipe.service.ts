@@ -1,16 +1,13 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, catchError, tap, throwError, map } from "rxjs";
+import { Observable, catchError, tap, throwError, map, of } from "rxjs";
 
 import { IRecipe } from "./recipe";
 
 @Injectable({
   providedIn: 'root'
 })
-export class recipeservice {
-  // If using Stackblitz, replace the url with this line
-  // because Stackblitz can't find the api folder.
-  // private recipeUrl = 'assets/recipes/recipes.json';
+export class recipeService {
   private recipeUrl = 'assets/data/recipes.json';
 
   constructor(private http: HttpClient) { }
@@ -18,7 +15,7 @@ export class recipeservice {
   getrecipes(): Observable<IRecipe[]> {
     return this.http.get<IRecipe[]>(this.recipeUrl)
       .pipe(
-        tap(data => console.log('All: ', JSON.stringify(data))),
+        // tap(data => console.log('All: ', JSON.stringify(data))),
         catchError(this.handleError)
       );
   }
@@ -30,6 +27,20 @@ export class recipeservice {
     return this.getrecipes()
       .pipe(
         map((recipes: IRecipe[]) => recipes.find(p => p.recipeId === id))
+      );
+  }
+
+  postEditRecipeForm(recipe: IRecipe): Observable<IRecipe | any > {
+    return this.http.post('https://putsreq.com/v7aM9toW3iH2oIqQpKvX', recipe)
+    // return of(recipe)
+  }
+
+  editRecipe(recipe: IRecipe): Observable<IRecipe | any > {
+    const id = typeof recipe === "number" ? recipe:recipe.recipeId
+    return this.http.put(this.recipeUrl, recipe)
+      .pipe(
+        // tap(recipe => console.log(id)),
+        catchError(this.handleError)
       );
   }
 
@@ -49,4 +60,7 @@ export class recipeservice {
     return throwError(() => errorMessage);
   }
 
+}
+function httpOptions(recipeUrl: string, recipe: IRecipe, httpOptions: any): Observable<IRecipe | undefined> {
+  throw new Error("Function not implemented.");
 }

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 import { IRecipe } from "./recipe";
-import { recipeservice } from "./recipe.service";
+import { recipeService } from "./recipe.service";
 
 @Component({
   templateUrl: './recipe-list.component.html',
@@ -27,7 +27,7 @@ export class recipeListComponent implements OnInit, OnDestroy {
   filteredrecipes: IRecipe[] = [];
   recipes: IRecipe[] = [];
 
-  constructor(private recipeservice: recipeservice) {}
+  constructor(private recipeservice: recipeService) {}
 
   performFilter(filterBy: string): IRecipe[] {
     filterBy = filterBy.toLocaleLowerCase();

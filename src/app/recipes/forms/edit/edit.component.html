@@ -1,0 +1,55 @@
+<div class="container">
+  <h2> Recipe Edit</h2>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="form-group mb-3">
+      <label for="name">Name</label>
+      <input id="name" name="name" class="form-control" [(ngModel)]="recipe.name"
+            required #nameField="ngModel"
+            [class.field-error]="form.submitted && nameField.invalid">
+      <div [hidden]="!form.submitted || nameField.valid"
+        class="alert alert-danger">
+        Enter a name
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="description">Description</label>
+      <input id="description" name="description" class="form-control" [(ngModel)]="recipe.description"
+            required #descriptionField="ngModel"
+            [class.field-error]="form.submitted && descriptionField.invalid">
+      <div [hidden]="!form.submitted || descriptionField.valid"
+        class="alert alert-danger">
+        Enter a description
+      </div>
+    </div>
+    <div class="form-check mb-3">
+      <input name="done" class="form-check-input" type="checkbox" value="" id="done" [(ngModel)]="recipe.done">
+      <label class="form-check-label" for="done">
+        Done
+      </label>
+    </div>
+    <div class="form-group mb-3">
+      <label for="rating">Rating</label>
+      <input id="rating" name="rating" class="form-control" [(ngModel)]="recipe.rating"
+              type="number" min="1" max="5" #ratingField="ngModel"
+            [class.field-error]="form.submitted && ratingField.invalid">
+      <div [hidden]="!form.submitted || ratingField.valid"
+        class="alert alert-danger">
+        Enter a rating
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="imageUrl">ImageUrl</label>
+      <input id="imageUrl" name="imageUrl" class="form-control" [(ngModel)]="recipe.imageUrl"
+            required #imageUrlField="ngModel"
+            [class.field-error]="form.submitted && imageUrlField.invalid">
+      <div [hidden]="!form.submitted || imageUrlField.valid"
+        class="alert alert-danger">
+        Enter a imageUrl
+      </div>
+    </div>
+    <div [hidden]="!postError" class="alert alert-danger">
+      {{ postErrorMessage}}
+    </div>
+    <button class="btn btn-primary">Send</button>
+  </form>
+</div>

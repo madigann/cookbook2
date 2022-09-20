@@ -11,12 +11,6 @@ import { Component } from "@angular/core";
         <ul class='nav nav-pills'>
           <li><a class='nav-link' routerLinkActive='active' routerLink='/welcome'>Welcome</a></li>
           <li><a class='nav-link' routerLinkActive='active' routerLink='/recipes'>Recipes</a></li>
-          <li>
-              <button class='nav-link'
-                      (click)='toggleImage()'>
-                {{showImage2 ? 'Hide' : 'Show'}} Images
-              </button>
-          </li>
         </ul>
       </nav>
       <router-outlet></router-outlet>
@@ -43,11 +37,4 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   pageTitle = 'My Recipes';
-  showImage2 = false;
-
-
-
-  toggleImage(): void {
-    this.showImage2 = !this.showImage2;
-  }
 }
