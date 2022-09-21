@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { onErrorResumeNext } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IRecipe } from '../../recipe';
 import { recipeService } from '../../recipe.service';
 
@@ -14,7 +14,7 @@ export class EditRecieComponent implements OnInit {
 
   originalrecipe: IRecipe = {
     recipeId: 0,
-    name: '',
+    name: 'Tom',
     description: null,
     rating: 0,
     done: null,
@@ -24,10 +24,23 @@ export class EditRecieComponent implements OnInit {
   recipe: IRecipe = { ...this.originalrecipe }
   postError = false;
   postErrorMessage = '';
+  getErrorMessage = '';
 
-  constructor(private recipeService: recipeService) { }
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private recipeService: recipeService) { }
 
   ngOnInit(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log(id);
+    this.getrecipe(id);
+  }
+
+  getrecipe(id: number): void {
+    this.recipeService.getrecipe(id).subscribe({
+      next: recipe => this.recipe = recipe,
+      error: err => this.getErrorMessage = err
+    });
   }
 
   onSubmit(form: NgForm) {
@@ -48,5 +61,9 @@ export class EditRecieComponent implements OnInit {
     console.log('error: ', errorResponse)
     this.postError = true;
     this.postErrorMessage = errorResponse.error.errorMessage;
+  }
+
+  onBack(recipeId: number): void {
+    this.router.navigate(['/recipes', recipeId]);
   }
 }
