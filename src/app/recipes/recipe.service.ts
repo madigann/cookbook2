@@ -7,6 +7,7 @@ import { IRecipe } from "./recipe";
 @Injectable({
   providedIn: 'root'
 })
+
 export class recipeService {
   private recipeUrl = 'assets/data/recipes.json';
 
@@ -23,7 +24,7 @@ export class recipeService {
   // Get one recipe
   // Since we are working with a json file, we can only retrieve all recipes
   // So retrieve all recipes and then find the one we want using 'map'
-  getrecipe(id: number): Observable<IRecipe | undefined> {
+  getrecipe(id: number): Observable<IRecipe> {
     return this.getrecipes()
       .pipe(
         map((recipes: IRecipe[]) => recipes.find(p => p.recipeId === id))
@@ -61,6 +62,6 @@ export class recipeService {
   }
 
 }
-function httpOptions(recipeUrl: string, recipe: IRecipe, httpOptions: any): Observable<IRecipe | undefined> {
+function httpOptions(recipeUrl: string, recipe: IRecipe, httpOptions: any): Observable<IRecipe> {
   throw new Error("Function not implemented.");
 }

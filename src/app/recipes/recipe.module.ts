@@ -19,6 +19,10 @@ import { EditRecieComponent } from './forms/edit/edit.component';
         path: 'recipes/:id',
         canActivate: [recipeDetailGuard],
         component: recipeDetailComponent
+      },
+      {
+        path: 'editrecipe/:id',
+        component: EditRecieComponent
       }
     ]),
     SharedModule

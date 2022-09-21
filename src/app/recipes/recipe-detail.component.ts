@@ -10,7 +10,7 @@ import { recipeService } from './recipe.service';
 export class recipeDetailComponent implements OnInit {
   pageTitle = 'recipe Detail';
   errorMessage = '';
-  recipe: IRecipe | undefined;
+  recipe: IRecipe | any;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
