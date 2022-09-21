@@ -33,15 +33,15 @@ export class EditRecieComponent implements OnInit {
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(id);
-    this.getrecipe(id);
+    // this.getrecipe(id);
   }
 
-  getrecipe(id: number): void {
-    this.recipeService.getrecipe(id).subscribe({
-      next: recipe => this.recipe = recipe,
-      error: err => this.getErrorMessage = err
-    });
-  }
+  // getrecipe(id: number): void {
+  //   this.recipeService.getrecipe(id).subscribe({
+  //     next: recipe => this.recipe = recipe,
+  //     error: err => this.getErrorMessage = err
+  //   });
+  // }
 
   onSubmit(form: NgForm) {
     // console.log('in onSubmit: ', form.valid)
