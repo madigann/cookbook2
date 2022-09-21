@@ -16,17 +16,19 @@ import { Component } from "@angular/core";
       <router-outlet></router-outlet>
       <!-- footer -->
       <footer class="bg-light text-center text-lg-start">
-      <div class="text-center">Developed by:</div>
-        <div class="container-fluid text-center">
-          <h3>Noel Madigan</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-            aliquam voluptatem veniam, est atque cumque eum delectus sint!
-          </p>
-        </div>
         <!-- Copyright -->
         <div class= "container-sm text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          <div class="text-center">
+            Developed by:
+          </div>
+          <div class="container-fluid text-center">
+            <h3>Noel Madigan</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+              aliquam voluptatem veniam, est atque cumque eum delectus sint!
+            </p>
+          </div>
           © 2022 Copyright:
         <a href="email:nmadigan@industrial-integration.com">nmadigan@industrial-integration.com</a>
         </div>
