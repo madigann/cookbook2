@@ -27,17 +27,26 @@ export class recipeService {
   getrecipe(id: number): Observable<IRecipe | undefined> {
     return this.getrecipes()
       .pipe(
-        map((recipes: IRecipe[]) => recipes.find(p => p.recipeId === id))
+        map((recipes: IRecipe[]) => recipes.find(p => p.id === id))
       );
   }
 
   postEditRecipeForm(recipe: IRecipe): Observable<IRecipe | any > {
-    return this.http.post('https://putsreq.com/v7aM9toW3iH2oIqQpKvX', recipe)
+    // return this.http.post('https://putsreq.com/v7aM9toW3iH2oIqQpKvX', recipe)
+
+    return this.http.post(this.recipeUrl, recipe)
+    // return of(recipe)
+  }
+
+  postNewRecipeForm(recipe: IRecipe): Observable<IRecipe | any> {
+    // return this.http.post('https://putsreq.com/v7aM9toW3iH2oIqQpKvX', recipe)
+    console.log('All: ', JSON.stringify(recipe))
+    return this.http.post(this.recipeUrl, recipe)
     // return of(recipe)
   }
 
   editRecipe(recipe: IRecipe): Observable<IRecipe | any > {
-    const id = typeof recipe === "number" ? recipe:recipe.recipeId
+    const id = typeof recipe === "number" ? recipe:recipe.id
     return this.http.put(this.recipeUrl, recipe)
       .pipe(
         // tap(recipe => console.log(id)),

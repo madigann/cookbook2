@@ -1,5 +1,5 @@
 export interface IRecipe {
-  recipeId: number;
+  id: number;
   name: string;
   description: string;
   rating: number;

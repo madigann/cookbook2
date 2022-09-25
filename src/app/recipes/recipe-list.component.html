@@ -43,7 +43,7 @@
                    [style.margin.px]='imageMargin'>
             </td>
             <td>
-              <a [routerLink]="['/recipes', recipe.recipeId]">
+              <a [routerLink]="['/recipes', recipe.id]">
                 {{ recipe.name }}
               </a>
             </td>
@@ -59,6 +59,11 @@
           </tr>
         </tbody>
       </table>
+      <button class='btn btn-outline-secondary'
+              style='width:80px'
+              [routerLink]="['/newrecipe']">
+        <i class="fa fa-pen-to-square" [routerLink]="['/newrecipe']"></i> New
+      </button>
     </div>
   </div>
 </div>
@@ -66,4 +71,3 @@
      class='alert alert-danger'>
   Error: {{ errorMessage }}
 </div>
-<pm-recipe-form-edit></pm-recipe-form-edit>

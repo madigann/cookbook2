@@ -13,8 +13,8 @@ import { recipeService } from '../../recipe.service';
 export class EditRecieComponent implements OnInit {
 
   originalrecipe: IRecipe = {
-    recipeId: 0,
-    name: 'Tom',
+    id: 0,
+    name: '',
     description: null,
     rating: 0,
     done: null,
@@ -63,7 +63,7 @@ export class EditRecieComponent implements OnInit {
     this.postErrorMessage = errorResponse.error.errorMessage;
   }
 
-  onBack(recipeId: number): void {
-    this.router.navigate(['/recipes', recipeId]);
+  onBack(id: number): void {
+    this.router.navigate(['/recipes', id]);
   }
 }

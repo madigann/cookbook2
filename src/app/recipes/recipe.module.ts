@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { recipeDetailGuard } from './recipe-detail.guard';
 import { SharedModule } from '../shared/shared.module';
 import { EditRecieComponent } from './forms/edit/edit.component';
+import { NewRecipeComponent } from './forms/new/new.component';
 
 @NgModule({
   declarations: [
     recipeListComponent,
     recipeDetailComponent,
-    EditRecieComponent
+    EditRecieComponent,
+    NewRecipeComponent
   ],
   imports: [
     RouterModule.forChild([
@@ -23,6 +25,10 @@ import { EditRecieComponent } from './forms/edit/edit.component';
       {
         path: 'editrecipe/:id',
         component: EditRecieComponent
+      },
+      {
+        path: 'newrecipe',
+        component: NewRecipeComponent
       }
     ]),
     SharedModule
